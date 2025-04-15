@@ -8,6 +8,13 @@ export const Card = styled.div`
   overflow: hidden;
   cursor: pointer;
 
+   &:hover {
+    transform: translateY(-15px);
+    box-shadow:
+      0 4px 16px rgba(255, 255, 255, 0.08),
+      0 8px 32px rgba(255, 255, 255, 0.1);
+  }
+
   &:hover img {
     filter: blur(4px) brightness(0.5);
     transform: scale(1.05);
@@ -16,14 +23,22 @@ export const Card = styled.div`
   &:hover div {
     opacity: 1;
   }
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.03); // 밝은 그림자
+   transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 `;
 
 export const Poster = styled.img`
   width: 100%;
-  height: auto;
-  border-radius: 2rem;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+
   transition: all 0.3s ease;
   display: block;
+  border: none;
 `;
 
 export const Overlay = styled.div`
@@ -44,7 +59,7 @@ export const Title = styled.h3`
   margin: 0.5rem 0;
   font-size: 1.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-  
+
   padding: 0.5rem 1rem;
   border-radius: 1rem;
 `;
