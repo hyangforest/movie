@@ -58,7 +58,7 @@ export default function Home() {
       ) : tvShowError ? (
         <MediaErrorBox>
           <p>{tvShowError}</p>
-          <MediaRetryButton onClick={refetchMovies}>
+          <MediaRetryButton onClick={refetchTvShows}>
             <RefreshCcw /> 새로고침
           </MediaRetryButton>
         </MediaErrorBox>
