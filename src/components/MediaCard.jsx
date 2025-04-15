@@ -8,7 +8,7 @@ export default function MediaCard({ data }) {
     <Card>
       <Poster src={poster} alt={title} />
       <Overlay>
-        <Title hasOverview={!!overview}>{title}</Title>        
+        <Title $hasoverview={!!overview}>{title}</Title>        
         {overview && <OverView>{overview}</OverView>}
       </Overlay>
     </Card>

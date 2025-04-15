@@ -64,8 +64,8 @@ export const Title = styled.div`
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   font-weight: 600;
   
-  ${({ hasOverview }) =>
-    hasOverview &&
+  ${({ hasoverview }) =>
+    hasoverview &&
     `flex: 1;
     display: flex;
     align-items: center; 
