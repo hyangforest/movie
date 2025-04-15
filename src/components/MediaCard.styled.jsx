@@ -75,6 +75,7 @@ export const Title = styled.div`
 
 export const OverView = styled.div`
   flex: 4;
+  margin-top: 1.5rem;
   font-size: 1rem;
   line-height: 1.4;
   color: #ddd;
@@ -82,5 +83,5 @@ export const OverView = styled.div`
   text-overflow: ellipsis;
   padding: 0 1rem;
   padding-bottom: 0.5rem;
-  font-weight: 300;
+  font-weight: 200;
 `;
