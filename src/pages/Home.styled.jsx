@@ -29,3 +29,21 @@ export const Header = styled.h1`
   text-align: left;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 `;
+
+export const SkeletonCard = styled.div`
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 2rem;
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+`;
