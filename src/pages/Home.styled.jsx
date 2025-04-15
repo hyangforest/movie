@@ -47,3 +47,34 @@ export const SkeletonCard = styled.div`
     }
   }
 `;
+
+export const MediaErrorBox = styled.div`
+  padding: 3rem;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+`;
+
+export const MediaRetryButton = styled.button`
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.825rem 1.2rem;
+  background: #444;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #666;
+  }
+
+  svg {
+    font-weight: bold;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+`;

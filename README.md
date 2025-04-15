@@ -13,5 +13,6 @@
 [https://www.themoviedb.org](https://www.themoviedb.org)
 
 # npm
-1. npm install axios
-2. npm install styled-components
+1. `npm install axios`
+2. `npm install styled-components`
+3. `npm install lucide-react`

@@ -1,7 +1,15 @@
 import MediaCard from "../components/MediaCard";
-import { Container, Grid, Header, SkeletonCard } from "./Home.styled";
+import {
+  Container,
+  Grid,
+  Header,
+  SkeletonCard,
+  MediaErrorBox,
+  MediaRetryButton,
+} from "./Home.styled";
 import { fetchNowPlaying, fetchTV } from "../api/tmdb";
 import { useFetch } from "../hooks/useFetch";
+import { RefreshCcw } from 'lucide-react'
 
 export default function Home() {
   const {
@@ -27,7 +35,12 @@ export default function Home() {
           ))}
         </Grid>
       ) : movieError ? (
-        <div>{movieError}</div>
+        <MediaErrorBox>
+          <p>{movieError}</p>
+          <MediaRetryButton onClick={refetchMovies}>
+            <RefreshCcw /> 새로고침
+          </MediaRetryButton>
+        </MediaErrorBox>
       ) : (
         <Grid>
           {movies &&
@@ -43,7 +56,12 @@ export default function Home() {
           ))}
         </Grid>
       ) : tvShowError ? (
-        <div>{tvShowError}</div>
+        <MediaErrorBox>
+          <p>{tvShowError}</p>
+          <MediaRetryButton onClick={refetchMovies}>
+            <RefreshCcw /> 새로고침
+          </MediaRetryButton>
+        </MediaErrorBox>
       ) : (
         <Grid>
           {tvShows &&
