@@ -1,14 +1,15 @@
 import React from "react";
-import { Card, Poster, Title, Overlay } from "./MediaCard.styled";
+import { Card, Poster, Title, Overlay, OverView } from "./MediaCard.styled";
 
 export default function MediaCard({ data }) {
-  const { title, poster } = data;
+  const { title, poster, overview } = data;
 
   return (
     <Card>
       <Poster src={poster} alt={title} />
       <Overlay>
-        <Title>{title}</Title>
+        <Title hasOverview={!!overview}>{title}</Title>        
+        {overview && <OverView>{overview}</OverView>}
       </Overlay>
     </Card>
   );

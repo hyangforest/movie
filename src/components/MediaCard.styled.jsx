@@ -48,18 +48,39 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   opacity: 0;
   transition: opacity 0.3s ease;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);  
 `;
 
-export const Title = styled.h3`
-  margin: 0.5rem 0;
-  font-size: 1.5rem;
+export const Title = styled.div`
+  width: 80%; 
+  font-size: 1.325rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  
+  ${({ hasOverview }) =>
+    hasOverview &&
+    `flex: 1;
+    display: flex;
+    align-items: center; 
+    justify-content: center;`
+  }
+`;
 
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
+export const OverView = styled.div`
+  flex: 4;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ddd;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 1rem;
+  padding-bottom: 0.5rem;
+  font-weight: 300;
 `;
