@@ -9,7 +9,9 @@ import {
 } from "./Home.styled";
 import { fetchNowPlaying, fetchTV } from "../api/tmdb";
 import { useFetch } from "../hooks/useFetch";
-import { RefreshCcw } from 'lucide-react'
+import { RefreshCcw } from "lucide-react";
+
+import { useState } from 'react';
 
 export default function Home() {
   const {
@@ -25,8 +27,31 @@ export default function Home() {
     refetch: refetchTvShows,
   } = useFetch(fetchTV);
 
+  // 검색
+  const [query, setQuery] = useState('');
+
+  const handleSearch = () => {
+    if (!query.trim()) return;
+
+    const prev = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+    const next = [...prev, query];
+
+    localStorage.setItem('searchHistory', JSON.stringify(next));
+    console.log('📦 저장된 검색어 목록:', next);
+
+    setQuery('');
+  };
+  // 검색
+
   return (
     <Container>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+        placeholder="검색어를 입력하세요"
+      />
       <Header>최신 영화</Header>
       {movieLoading ? (
         <Grid>
